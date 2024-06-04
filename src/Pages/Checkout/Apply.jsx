@@ -9,7 +9,7 @@ const Apply = () => {
 console.log(scholar);
     const [customerActive, setCustomerActive] = useState(false);
   return (
-    <div className=" lg:col-span-3 relative min-h-[700px] max-w-7xl mx-auto lg:px-0 md:px-5 px-3  py-8">
+    <div className=" lg:col-span-3 relative min-h-[700px] max-w-7xl mx-auto lg:px-0 md:px-5 px-3  py-5">
       <h1 className=" font-medium text-lg mb-2">
         To Apply the Scholarship at first Payment the Application fee
       </h1>
