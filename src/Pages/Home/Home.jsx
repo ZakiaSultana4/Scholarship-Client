@@ -33,7 +33,7 @@ const Home = () => {
             <h1 className="md:text-7xl text-4xl font-extrabold title-text text-center">
               Top Scholarships
             </h1>
-            <p className="text-center lg:w-[70%] md:w-[80%] w-full mx-auto my-5 md:text-base text-sm md:leading-7 leading-relaxed">
+            <p className="text-center lg:w-[70%] md:w-[80%] w-full mx-auto my-4 md:text-base text-sm md:leading-7 leading-relaxed">
             Top and low fees scholarship are here
             </p>
 
