@@ -9,7 +9,7 @@ import { LuClipboardEdit } from "react-icons/lu";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axiosSecure from "../../../api";
-import axios from "axios";
+
 
 export const Allappliedscholar = () => {
   const [scholar, setscholar] = useState([]);
