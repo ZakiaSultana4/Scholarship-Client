@@ -34,7 +34,7 @@ const Allreviews = () => {
     }
   };
   return (
-    <section className="container px-4 mx-auto pt-12">
+    <section className="container px-4 mx-auto pt-10">
     <div className="flex items-center gap-x-3">
       <h2 className="text-lg font-medium text-gray-800 ">
         My Posted reviews in perticular Scholarship
