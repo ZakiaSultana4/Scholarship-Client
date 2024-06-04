@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
     })
   }
 
-  // onAuthStateChange
+  // onAuthStateChange to save
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)
