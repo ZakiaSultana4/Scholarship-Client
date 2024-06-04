@@ -28,7 +28,7 @@ const Home = () => {
     <div>
       <Carusel2 />
       <div className="bg-[#fafafa]">
-        <div className="bg-[#fafafa]">
+        <div className="bg-[#d8d7d7]">
           <div className="max-w-7xl mx-auto lg:px-0 md:px-5 px-3 md:py-32 py-24">
             <h1 className="md:text-7xl text-4xl font-extrabold title-text text-center">
               Top Scholarships
