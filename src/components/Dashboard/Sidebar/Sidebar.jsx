@@ -30,7 +30,7 @@ const Sidebar = () => {
           <div>
             <div
               className="w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center
-             bg-[#a7d8cf] mx-auto mt-6"
+             bg-[#a7d8cf] mx-auto mt-5"
             >
               <Link to="/" className="flex gap-2 items-center">
                 <img
