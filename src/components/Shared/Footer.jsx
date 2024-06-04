@@ -10,9 +10,11 @@ const Footer = () => {
                 <div className="grid md:grid-cols-3 grid-cols-1 md:justify-between justify-center md:items-start items-center md:text-left text-start space-y-8">
                     <div className="mt-4">
                         <div className="flex gap-3">
-                            <div className=" bg-[rgb(15,29,56)] px-3 ">
-                                <img  src="https://aihire-orpin.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogolisht.90a7fdea.png&w=256&q=75" alt="" />
-                            </div>
+                        <img
+            className="w-[200px]"
+            src="https://wpdemo.zcubethemes.com/scholary/wp-content/themes/scholary/inc/assets/images/logo.png"
+            alt=""
+          />
                           
                         </div>
                         <p className="pt-6">
