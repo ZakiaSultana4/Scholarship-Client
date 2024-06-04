@@ -16,7 +16,7 @@ export const Allappliedscholar = () => {
   const { user, setLoading } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const [openModal, setOpenModal] = useState(false);
+
   const [openModa, setOpenModa] = useState(false);
   useEffect(() => {
     getData();
@@ -66,7 +66,7 @@ export const Allappliedscholar = () => {
   };
 
   return (
-    <section className="container px-4 mx-auto pt-12">
+    <section className="container px-4 mx-auto pt-10">
       <div className="flex items-center gap-x-3">
         <h2 className="text-lg font-medium text-gray-800 ">My scholar</h2>
       </div>
