@@ -86,7 +86,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 bg-[rgb(15,29,56)] "
+              className="menu menu-sm dropdown-content mt-2 z-[1] p-2 shadow  rounded-box w-52 bg-[rgb(15,29,56)] "
             >
             
               <li className="mt-2">
