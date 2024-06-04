@@ -47,7 +47,7 @@ const Carusel2 = () => {
              image="https://html.themewant.com/unipix/assets/images/banner/slider__3.jpg"
              text='Level Up Your Academic Journey Begins Scholary'
              p='Remember to tailor the section names to fit the specific needs and
-             structure of your university website.'
+             structure of your university website'
           />
         </SwiperSlide>
       </Swiper>
