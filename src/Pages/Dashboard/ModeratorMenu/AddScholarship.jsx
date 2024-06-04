@@ -117,7 +117,7 @@ const AddScholarship = () => {
             <select
               name="subjectCategory"
               id="subjectCategory"
-              className="block w-full px-4 py-4 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-[#a7d8cf]  focus:ring-[#a7d8cf]  focus:ring-opacity-40  focus:outline-none focus:ring"
+              className="block w-full px-4 py-4 mt-4 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-[#a7d8cf]  focus:ring-[#a7d8cf]  focus:ring-opacity-40  focus:outline-none focus:ring"
             >
               <option value="Full-fund">Full-fund</option>
               <option value="Partial">Partial</option>
