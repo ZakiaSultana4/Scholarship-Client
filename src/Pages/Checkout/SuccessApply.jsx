@@ -62,7 +62,7 @@ const SuccessApply = () => {
         </h2>
 
         <form onSubmit={handleFormSubmit}>
-          <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 mt-5 sm:grid-cols-2">
             <div>
               <label className="text-gray-700 " htmlFor="Name">
                 Applicant Name
