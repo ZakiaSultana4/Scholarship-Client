@@ -6,7 +6,7 @@ This Project is about Scholarship application applied system for top most Univer
 
 
 # Live Site Link: [Scholary-Scholarship-Application-Applied-System](https://scholary-90512.web.app/)
-## Technologies for this project: 
+# Technologies for this project: 
 - React js,Tailwind css,Firebase,Node js, Stripe js, Express js, and Mongoodb
 
 # Admin email and password: 
@@ -61,7 +61,7 @@ This Project is about Scholarship application applied system for top most Univer
  ## 9 . User Management :
 
 - only admin can manage all the user.he can delete a user or update a user role to make user moderator or admin.
- ## 10 . Applied scholarship ststus Management :
+ ## 10 . Applied scholarship status Management :
 
 - only admin and moderator can update the scholarship application status . 
 -By default the ststus will be pending when admin or moderator change the ststus as processing,completed or  rejeceted it will be seen on user dashboard.
