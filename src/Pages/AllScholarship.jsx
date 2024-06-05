@@ -75,7 +75,7 @@ const AllScholarship = () => {
         {scholarship?.map((scholar) => (
          <>
          <div className="py-2  px-4 shadow-md ">
-           <div className=" flex gap-5">
+           <div className=" flex gap-5  flex-col md:flex-row">
              <img src={scholar.bannerUrl} alt="" className="w-[300px] h-[220px]"/>
              <div className="">
                <p className="font-bold text-xl">{scholar.unName}</p>

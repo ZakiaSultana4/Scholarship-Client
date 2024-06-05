@@ -4,6 +4,7 @@ import { VscGitStashApply } from "react-icons/vsc";
 import { GoCodeReview } from "react-icons/go";
 import MenuItem from "../Sidebar/MenuItem";
 import { FaPeopleRoof } from "react-icons/fa6";
+import { ImStatsBars } from "react-icons/im";
 const AdminMenu = () => {
   return (
     <>
@@ -12,7 +13,7 @@ const AdminMenu = () => {
     <MenuItem icon={VscGitStashApply} label="Manage Applied Scholarship" address="all-applied-Scholarship-admin" />
     <MenuItem icon={GoCodeReview} label="Manage Reviews" address="all-reviews-admin" />
     <MenuItem icon={FaPeopleRoof} label="Manage Users" address="all-users" />
-    <MenuItem icon={FaPeopleRoof} label="Statistics" address="adminStatistics" />
+    <MenuItem icon={ImStatsBars} label="Statistics" address="adminStatistics" />
   </>
   )
 }

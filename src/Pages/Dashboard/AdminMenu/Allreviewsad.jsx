@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 import axiosSecure from "../../../api";
 import useAuth from "../../../hooks/useAuth";
 import { MdDelete } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+
 import toast from "react-hot-toast";
 
 const Allreviewsad = () => {
     const [scholarship, setScholarship] = useState([]);
     const { user } = useAuth();
-    const navigate = useNavigate();
+
   
     useEffect(() => {
       getData();
@@ -124,14 +123,7 @@ const Allreviewsad = () => {
                         >
                           <MdDelete size={20} />
                         </div>
-                        <div
-                          onClick={() =>
-                            navigate(`/dashboard/updateReview/${scholar._id}`)
-                          }
-                          className=" cursor-pointer"
-                        >
-                          <FaEdit size={18} />
-                        </div>
+                       
                       </td>
                     </tr>
                   </>

@@ -1,49 +1,27 @@
 import { useEffect, useState } from "react";
 
 import useAuth from "../../../hooks/useAuth";
-
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { LuClipboardEdit } from "react-icons/lu";
-
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axiosSecure from "../../../api";
-import axios from "axios";
 
 const AllappliedScholarAd = () => {
   const [scholar, setscholar] = useState([]);
-  const [itemsPerPage, setItemsPerPage] = useState(4);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [count, setCount] = useState(0);
-
   const [sort, setSort] = useState("");
-  const [sort2, setSort2] = useState("");
-  const [search, setSearch] = useState("");
-  const [searchText, setSearchText] = useState("");
   const { user, setLoading } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [openModa, setOpenModa] = useState(false);
- 
+
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axiosSecure(
-        `/ad-ap-scholar?page=${currentPage}&size=${itemsPerPage}&sort=${sort}&sort2=${sort2}&search=${search}`
-      );
+      const { data } = await axiosSecure(`/ad-ap-scholar`);
       setscholar(data);
     };
     getData();
-  }, [currentPage, itemsPerPage, search, sort,sort2]);
-  useEffect(() => {
-    const getCount = async () => {
-      const { data } = await axios(
-        `${import.meta.env.VITE_API_URL}/jobs-count?&search=${search}`
-      );
-
-      setCount(data.count);
-    };
-    getCount();
-  }, [search]);
+  }, []);
 
   const { mutateAsync } = useMutation({
     mutationFn: async ({ id, status }) => {
@@ -81,7 +59,38 @@ const AllappliedScholarAd = () => {
       toast.error(err.message);
     }
   };
+  /* Sort Handler Start*/
+  const handleSortChange = (event) => {
+    const selectedValue = event.target.value;
 
+    if (selectedValue === "asc") {
+      const sortedByasc = [...scholar].sort((a, b) =>
+        a.deadline.localeCompare(b.deadline)
+      );
+      setscholar(sortedByasc);
+    } else if (selectedValue === "desc") {
+      const sortedBydesc = [...scholar].sort((a, b) =>
+        b.deadline.localeCompare(a.deadline)
+      );
+      setscholar(sortedBydesc);
+    }
+  };
+  /* Sort Handler Start*/
+  const handleSortChange2 = (event) => {
+    const selectedValue = event.target.value;
+
+    if (selectedValue === "asc2") {
+      const sortedByasc = [...scholar].sort((a, b) =>
+        a.appliedData.localeCompare(b.appliedData)
+      );
+      setscholar(sortedByasc);
+    } else if (selectedValue === "desc2") {
+      const sortedBydesc = [...scholar].sort((a, b) =>
+        b.appliedData.localeCompare(a.appliedData)
+      );
+      setscholar(sortedBydesc);
+    }
+  };
   return (
     <section className="container px-4 mx-auto pt-5">
       <div className="flex items-center gap-x-3">
@@ -89,22 +98,31 @@ const AllappliedScholarAd = () => {
           Applied Scholarships
         </h2>
       </div>
-
-      <div>
-        <select
-          onChange={(e) => {
-            setSort(e.target.value);
-            setCurrentPage(1);
-          }}
-          value={sort}
-          name="sort"
-          id="sort"
-          className="border p-4 rounded-md"
-        >
-          <option value="">Sort By Deadline</option>
-          <option value="dsc">Descending Order</option>
-          <option value="asc">Ascending Order</option>
-        </select>
+      <div className=" flex gap-5   justify-center">
+        <div>
+          <select
+            onChange={handleSortChange}
+            className="select select-bordered lg:w-[200px]"
+          >
+            <option value={""} selected>
+              Sort By Deadline:
+            </option>
+            <option value={"asc"}>Low to High</option>
+            <option value={"desc"}>High to Low</option>
+          </select>
+        </div>
+        <div>
+          <select
+            onChange={handleSortChange2}
+            className="select select-bordered lg:w-[200px]"
+          >
+            <option value={""} selected>
+              Sort By Applied Date:
+            </option>
+            <option value={"asc2"}>Low to High</option>
+            <option value={"desc2"}>High to Low</option>
+          </select>
+        </div>
       </div>
 
       <div className=" flex gap-10 items-center justify-center"></div>
@@ -165,7 +183,7 @@ const AllappliedScholarAd = () => {
                       scope="col"
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
                     >
-                     Applied Date
+                      Applied Date
                     </th>
                     <th
                       scope="col"
@@ -211,11 +229,11 @@ const AllappliedScholarAd = () => {
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                         {scholar.degree}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                        {scholar.deadline.slice(0, 10)}
+                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-wrap">
+                        {scholar.deadline}
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                        {scholar?.appliedData.slice(0, 10)}
+                      <td className="px-4 py-4 text-sm text-gray-500  whitespace-wrap">
+                        {scholar?.appliedData}
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                         ${scholar.serviceCharge}
@@ -224,7 +242,7 @@ const AllappliedScholarAd = () => {
                         ${scholar.fee}
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap ">
-                        <div className="flex gap-4">
+                        <div className="flex gap-1">
                           <div
                             className={`inline-flex items-center px-3 py-1 rounded-full gap-x-2 ${
                               scholar.status === "Pending" &&
@@ -346,13 +364,13 @@ const AllappliedScholarAd = () => {
 
                         <button
                           onClick={() => handleDelete(scholar._id)}
-                          className=" bg-[#004C3F] px-1 rounded-md text-white"
+                          className=" bg-[#b34932] px-1 rounded-md text-white"
                         >
                           Cancel
                         </button>
                         <button
                           onClick={() => navigate(`/scholar/${scholar._id}`)}
-                          className=" bg-[#004C3F] px-1 rounded-md text-white"
+                          className=" bg-[#f8b13f] px-1 rounded-md text-white"
                         >
                           Details
                         </button>

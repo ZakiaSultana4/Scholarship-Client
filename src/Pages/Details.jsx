@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Slider2 from "../components/Slider/Slider2";
+import axiosSecure from "../api";
 
 const Details = () => {
   const { id } = useParams();
@@ -18,8 +19,8 @@ const Details = () => {
   const [scholar, setScholar] = useState([]);
   const [scholarship, setScholarship] = useState([]);
   useEffect(() => {
-    axios
-    .get(`${import.meta.env.VITE_API_URL}/scholar/${id}`)
+    axiosSecure
+    .get(`/scholar/${id}`)
     .then((res) => {
       setScholar(res.data)
     })
@@ -38,7 +39,7 @@ const Details = () => {
 
   return (
     <div className=" mt-5  max-w-7xl mx-auto lg:px-0 md:px-5 px-3  flex flex-col gap-5">
-      <div className=" flex gap-10">
+      <div className=" flex gap-10  flex-col md:flex-row">
         <img src={scholar.bannerUrl} alt="" className="w-[500px]" />
         <div className="">
           <div className="">

@@ -50,14 +50,18 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/apply/${params.id}`),
       },
+
       {
         path: "/scholar/:id",
         element: <Details />,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_API_URL}/scholar/${params.id}`),
       },
       {
         path: "/successApply/:id",
         element: <SuccessApply />,
-
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_API_URL}/scholar/${params.id}`),
       },
      
     ],

@@ -3,7 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useState } from "react";
 import CheckoutPaymentForm  from "./CheckoutPaymentForm"
 import { useLoaderData } from "react-router-dom";
-const stripePromise = loadStripe(import.meta.env.VITE_PUBLISHABLE_KEY);
+const stripePromise = loadStripe('pk_test_51ObLksL8ZFHce7aGUaKSzau0DzbVsbVYN5IFivC3hmqoxqaCZAgsvkdbYLyCTYhJFoLPFHaOsrHp1gKapE37hyrg00FEX8FYSX');
 const Apply = () => {
   const scholar = useLoaderData();
 console.log(scholar);

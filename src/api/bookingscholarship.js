@@ -4,7 +4,7 @@ import axiosSecure from '../hooks/useAxiosSecure'
 
 // create payment intent
 export const createPaymentIntent = async fee => {
-  const { data } = await axios.post('https://scholarship-two.vercel.app/create-payment-intent', fee)
+  const { data } = await axios.post('https://scholary.vercel.app/create-payment-intent', fee)
   return data
 }
 

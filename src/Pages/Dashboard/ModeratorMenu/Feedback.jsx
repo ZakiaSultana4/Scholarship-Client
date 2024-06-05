@@ -17,7 +17,7 @@ const Feedback = () => {
 
     try {
       const { data } = await axios.put(
-        `https://scholarship-two.vercel.app/Feedback/${id}`,
+        `https://scholary.vercel.app/Feedback/${id}`,
         FeedbackData
       );
       console.log(data);

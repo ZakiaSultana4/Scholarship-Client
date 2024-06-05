@@ -4,7 +4,7 @@ import { MdModeComment } from "react-icons/md";
 const Article = () => {
   const articles = [
     {
-      title: "The Future of Remote Work",
+      title: "Engineers in the Arts Scholarship",
       description:
         "Explore the evolving landscape of remote work and its impact on the modern workplace.",
 
@@ -13,10 +13,11 @@ const Article = () => {
       auth_img: "john_doe.jpg",
       tag: "Remote Work",
       comments: 42,
-      i:"https://aihire-orpin.vercel.app/_next/image?url=%2Fimg%2Ffrelancer%2Ff5.png&w=256&q=75"
+      i:"https://aihire-orpin.vercel.app/_next/image?url=%2Fimg%2Ffrelancer%2Ff5.png&w=256&q=75",
+      i2:"https://educate-nextjs.vercel.app/_next/image?url=%2Fimg%2Fcourse%2Fcourse-1-1.jpg&w=384&q=75"
     },
     {
-      title: "Navigating Career Transitions",
+      title: "Vincent's Club Scholarships and Bursaries",
       description:
         "Learn effective strategies for successfully navigating career transitions and making informed decisions.",
 
@@ -25,10 +26,11 @@ const Article = () => {
       auth_img: "jane_smith.jpg",
       tag: "Career Advice",
       comments: 28,
-      i:"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+      i:"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww",
+      i2:"https://educate-nextjs.vercel.app/_next/image?url=%2Fimg%2Fcourse%2Fcourse-1-2.jpg&w=384&q=75"
     },
     {
-      title: "Tech Trends in the Job Market",
+      title: "Haas Center Undergraduate Summer Fellowships",
       description:
         "Discover the latest technological trends that are reshaping the job market and influencing career paths.",
 
@@ -37,7 +39,8 @@ const Article = () => {
       auth_img: "alex_johnson.jpg",
       tag: "Technology",
       comments: 35,
-      i:"https://aihire-orpin.vercel.app/_next/image?url=%2Fimg%2Ffrelancer%2Ff9.png&w=256&q=75"
+      i:"https://aihire-orpin.vercel.app/_next/image?url=%2Fimg%2Ffrelancer%2Ff9.png&w=256&q=75",
+      i2:"https://educate-nextjs.vercel.app/_next/image?url=%2Fimg%2Fcourse%2Fcourse-1-3.jpg&w=384&q=75"
     },
   ];
 
@@ -49,7 +52,7 @@ const Article = () => {
           <div className="shadow-md rounded-b-lg" key={idx}>
             <img
               className="h-80 w-full object-cover rounded-t-lg"
-              src={article.image}
+              src={article.i2}
               alt=""
             />
             <div className="lx:py-6 py-4 xl:px-10 px-6">

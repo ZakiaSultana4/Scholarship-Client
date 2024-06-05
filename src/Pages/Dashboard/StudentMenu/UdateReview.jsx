@@ -14,7 +14,7 @@ const UdateReview = () => {
     // console.log(scholarship);
     // useEffect(() => {
     //   axios
-    //     .get(`https://scholarship-two.vercel.app/reviews?id=${id}`)
+    //     .get(`https://scholary.vercel.app/reviews?id=${id}`)
     //     .then((res) => {
     //       console.log(res);
     //       setScholarship(res.data);

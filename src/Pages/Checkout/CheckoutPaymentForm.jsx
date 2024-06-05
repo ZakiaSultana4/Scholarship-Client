@@ -79,7 +79,7 @@ const CheckoutPaymentForm = ({ customerActive, scholar }) => {
       };
       try {
         // save payment information to the server
-        const { data } = await axios.post('https://scholarship-two.vercel.app/scholarship', paymentInfo)
+        const { data } = await axios.post('https://scholary.vercel.app/scholarship', paymentInfo)
         console.log(data)
         // await saveBookingInfo(paymentInfo);
         const text = `Scolarship Applied Successful! ${paymentIntent.id}`;
