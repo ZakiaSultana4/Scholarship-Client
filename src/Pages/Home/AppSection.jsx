@@ -1,9 +1,9 @@
 
-
+import app from "../../assets/app.svg"
 const AppSection = () => {
   return (
     <div className="container mx-auto px-6 pb-16 bg-[#f7f7f7]">
-      <div className="grid xl:grid-cols-3 lg:grid-cols-2   bg-whiteSecondary/10 md:px-20 px-7 md:pt-20 pt-10 rounded-lg justify-between items-end">
+      <div className=" flex flex-col md:flex-row  bg-whiteSecondary/10 md:px-20 px-7 md:pt-20 pt-10 rounded-lg justify-between items-end">
         <div className="col-span-1">
           <div className="md:pb-20 pb-10">
             <h2 className=" md:text-6xl text-3xl font-bold">
@@ -81,9 +81,9 @@ const AppSection = () => {
             </div>
           </div>
         </div>
-        <div className="xl:block hidden"></div>
-        <div className="">
-          <img src="https://aihire-orpin.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fapp1.94cdfa1e.png&w=640&q=75" alt="" />
+    
+        <div className="mb-16 w-[500px] mx-10">
+          <img src={app} alt="" />
         </div>
       </div>
     </div>

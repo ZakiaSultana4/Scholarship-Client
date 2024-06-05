@@ -27,13 +27,15 @@ import ManageScholarshipAdmin from "../Pages/Dashboard/AdminMenu/ManageScholarsh
 import AllappliedScholarAd from "../Pages/Dashboard/AdminMenu/AllappliedScholarAd";
 import Allreviewsad from "../Pages/Dashboard/AdminMenu/Allreviewsad";
 import AdminStatistics from "../Pages/Dashboard/AdminMenu/AdminStatistics";
-// import ErrorPage from '../pages/ErrorPage'
+import ErrorPage from "../Pages/Err/ErrorPage";
+import AdminRoute from "./AdminRoute";
+import ModeratorMenu from "../components/Dashboard/Menu/ModeratorMenu";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -46,24 +48,35 @@ export const router = createBrowserRouter([
 
       {
         path: "/apply/:id",
-        element: <Apply />,
+        element: (
+          <PrivateRoute>
+            <Apply />,
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/apply/${params.id}`),
       },
 
       {
         path: "/scholar/:id",
-        element: <Details />,
+        element: (
+          <PrivateRoute>
+            <Details />,
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/scholar/${params.id}`),
       },
       {
         path: "/successApply/:id",
-        element: <SuccessApply />,
+        element: (
+          <PrivateRoute>
+            <SuccessApply />,
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/scholar/${params.id}`),
       },
-     
     ],
   },
   { path: "/login", element: <Login /> },
@@ -87,81 +100,174 @@ export const router = createBrowserRouter([
       // -------Applicant/Student-------
       {
         path: "/dashboard/my-Application",
-        element: <MyApplication />,
+        element: (
+          <PrivateRoute>
+            <MyApplication />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/my-reviews",
-        element: <Myreviews />,
+        element: (
+          <PrivateRoute>
+            <Myreviews />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/review/:id",
-        element: <Review />,
+        element: (
+          <PrivateRoute>
+            <Review />
+          </PrivateRoute>
+        ),
+
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/scholar/${params.id}`),
       },
       {
         path: "/dashboard/updateReview/:id",
-        element: <UdateReview />,
+        element: (
+          <PrivateRoute>
+            <UdateReview />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/scholar/${params.id}`),
       },
       // -------Moderator-----
       {
         path: "/dashboard/add-Scholarship",
-        element: <AddScholarship />,
+        element: (
+          <PrivateRoute>
+            <ModeratorMenu>
+            <AddScholarship />
+            </ModeratorMenu>
+              
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/all-applied-Scholarship",
-        element: <AllappliedScholarship />,
+        element: (
+          <PrivateRoute>
+               <ModeratorMenu>
+              
+            <AllappliedScholarship />,
+              </ModeratorMenu>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/all-reviews",
-        element: <Allreviews />,
+        element: (
+          <PrivateRoute>
+               <ModeratorMenu>
+              
+            <Allreviews />,
+              </ModeratorMenu>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/manage-Scholarships",
-        element: <ManageScholarships />,
+        element: (
+          <PrivateRoute>
+               <ModeratorMenu>
+              
+            <ManageScholarships />,
+              </ModeratorMenu>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/update/:id",
-        element: <UpdateScholarship />,
+        element: (
+          <PrivateRoute>
+            <UpdateScholarship />,
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/scholar/${params.id}`),
       },
       {
         path: "/dashboard/Feedback/:id",
-        element: <Feedback />,
+        element: (
+          <PrivateRoute>
+            <Feedback />,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/Edit/:id",
-        element: <Edit/>,
+        element: (
+          <PrivateRoute>
+            <Edit />,
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/Edit/${params.id}`),
       },
       //-------Admin
       {
         path: "/dashboard/all-users",
-        element: <AllUsers/>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <AllUsers />,
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/add-Scholarship-admin",
-        element: <AddScholarshipAdmin/>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <AddScholarshipAdmin />,
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/manage-Scholarship-admin",
-        element: <ManageScholarshipAdmin/>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <ManageScholarshipAdmin />,
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/all-applied-Scholarship-admin",
-        element:<AllappliedScholarAd/>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <AllappliedScholarAd />,
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/all-reviews-admin",
-        element:<Allreviewsad/>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <Allreviewsad />,
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/adminStatistics",
-        element:<AdminStatistics/>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <AdminStatistics />,
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
     ],
   },

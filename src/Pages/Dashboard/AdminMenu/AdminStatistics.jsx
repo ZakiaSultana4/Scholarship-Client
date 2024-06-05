@@ -56,24 +56,7 @@ const AdminStatistics = () => {
               </h4>
             </div>
           </div>
-          {/* Total Bookings */}
-          <div className='relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md'>
-            <div
-              className={`bg-clip-bordermb-4 mx-4 rounded-xl overflow-hidden bg-gradient-to-tr 
-              shadow-lg absolute mb-4 my-4 grid h-16 w-16 place-items-center from-blue-600 to-blue-400 text-white shadow-blue-500/40`}
-            >
-              <GiBookAura className='w-6 h-6 text-white'/>
          
-            </div>
-            <div className='p-4 text-right'>
-              <p className='block antialiased leading-normal  font-semibold'>
-                Total Scholarship Bookings :
-              </p>
-              <h4 className='block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900'>
-                {statData?.bookingCount}
-              </h4>
-            </div>
-          </div>
           {/* Total Bookings */}
           <div className='relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md'>
             <div
@@ -86,14 +69,32 @@ const AdminStatistics = () => {
             </div>
             <div className='p-4 text-right'>
               <p className='block antialiased leading-normal  font-semibold'>
-                Total Scholarships :
+              Total Scholarship Bookings 
               </p>
               <h4 className='block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900'>
-              {statData?.roomCount}
+             
+              {statData?.bookingCount}
               </h4>
             </div>
           </div>
-      
+       {/* Total Bookings */}
+       <div className='relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md'>
+            <div
+              className={`bg-clip-bordermb-4 mx-4 rounded-xl overflow-hidden bg-gradient-to-tr 
+              shadow-lg absolute mb-4 my-4 grid h-16 w-16 place-items-center from-blue-600 to-blue-400 text-white shadow-blue-500/40`}
+            >
+              <GiBookAura className='w-6 h-6 text-white'/>
+         
+            </div>
+            <div className='p-4 text-right'>
+              <p className='block antialiased leading-normal  font-semibold'>
+              Total Scholarships :
+              </p>
+              <h4 className='block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900'>
+           {statData?.roomCount}
+              </h4>
+            </div>
+          </div>
         </div>
 
         <div className='mb-4 grid grid-cols-1 px-20'>

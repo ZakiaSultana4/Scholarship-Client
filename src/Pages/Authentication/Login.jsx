@@ -78,7 +78,9 @@ const Login = () => {
           </div>
 
           <p className='mt-3 text-xl text-center text-gray-600 '>
-            Welcome back!
+          <Link to={'/'}>
+            <p className=" underline text-[#008060] text-lg font-semibold">Back To Home</p>
+        </Link>
           </p>
 
           <div

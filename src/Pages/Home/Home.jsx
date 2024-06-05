@@ -4,6 +4,7 @@ import axiosSecure from "../../api";
 import Carusel2 from "../../components/Slider/Carusel2";
 import { GiBookAura } from "react-icons/gi";
 import Article from "../Home/Article";
+import AppSection from "../Home/AppSection";
 const Home = () => {
   const [scholarship, setScholarship] = useState([]);
   const [seeMoreScholarship, setSeeMoreScholarship] = useState(false);
@@ -94,6 +95,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <AppSection/>
       <Article />
     </div>
   );

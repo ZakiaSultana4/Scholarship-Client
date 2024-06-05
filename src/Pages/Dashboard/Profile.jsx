@@ -26,7 +26,7 @@ const Profile = () => {
             />
           </a>
 
-          <p className='p-2 px-4 text-xs text-white bg-pink-500 rounded-full'>
+          <p className='p-2 px-4 text-xs text-white bg-[#008060] rounded-full'>
             {role && role.toUpperCase()}
           </p>
           <p className='mt-2 text-xl font-medium text-gray-800 '>
@@ -34,25 +34,20 @@ const Profile = () => {
           </p>
           <div className='w-full p-2 mt-4 rounded-lg'>
             <div className='flex flex-wrap items-center justify-between text-sm text-gray-600 '>
-              <p className='flex flex-col'>
-                Name
+              <div className='flex flex-col'>
+                <p className=" text-gray-700">  {role} Name :</p>
                 <span className='font-bold text-black '>
-                  {user.displayName}
+                 {user.displayName}
                 </span>
-              </p>
-              <p className='flex flex-col'>
-                Email
-                <span className='font-bold text-black '>{user.email}</span>
-              </p>
-
-              <div>
-                <button className='bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
-                  Update Profile
-                </button>
-                <button className='bg-[#F43F5E] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053]'>
-                  Change Password
-                </button>
               </div>
+              <div className='flex flex-col'>
+                <p className=" text-gray-700">   {role} Email :</p>
+                <span className='font-bold text-black '>
+                {user.email}
+                </span>
+              </div>
+          
+
             </div>
           </div>
         </div>
